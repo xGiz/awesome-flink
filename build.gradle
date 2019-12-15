@@ -1,22 +1,14 @@
-plugins {
-    id 'java'
-}
 
 group 'com.arvin.flink.demo'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        mavenCentral()
+    }
 
-repositories {
-    maven { url 'https://maven.aliyun.com/repository/central' }
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'org.slf4j:slf4j-api:1.7.29'
-    // implementation 'ch.qos.logback:logback-classic:1.2.3'
-    implementation 'org.springframework:spring-core:5.2.1.RELEASE'
-    implementation 'org.apache.hadoop:hadoop-client:3.1.2'
-
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 }
