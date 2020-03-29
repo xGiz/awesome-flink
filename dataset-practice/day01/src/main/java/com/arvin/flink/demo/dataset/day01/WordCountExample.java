@@ -16,12 +16,15 @@ public class WordCountExample {
         "Who's there?",
         "I think I hear them. Stand, ho! Who's there?");
 
-    text.flatMap((String line, Collector<Tuple2<String, Integer>> out) -> {
-      String[] words = line.split(" ");
-      for (String word : words) {
-        out.collect(Tuple2.of(word, 1));
-      }
-    }).returns(TypeInformation.of(new TypeHint<Tuple2<String, Integer>>() {}))
+    text
+        .flatMap((String line, Collector<Tuple2<String, Integer>> out) -> {
+          String[] words = line.split(" ");
+          for (String word : words) {
+            out.collect(Tuple2.of(word, 1));
+          }
+        })
+        .returns(TypeInformation.of(new TypeHint<Tuple2<String, Integer>>() {
+        }))
         .groupBy(0)
         .sum(1)
         .print();

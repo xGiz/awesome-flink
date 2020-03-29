@@ -7,6 +7,7 @@ plugins {
 
 group 'com.arvin.flink.demo'
 version '1.0-SNAPSHOT'
+mainClassName = 'com.arvin.flink.demo.dataset.day01.WordCountExample'
 
 ext {
     javaVersion = '1.8'

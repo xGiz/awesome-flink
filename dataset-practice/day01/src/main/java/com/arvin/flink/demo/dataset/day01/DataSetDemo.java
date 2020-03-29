@@ -14,12 +14,14 @@ public class DataSetDemo {
 
     dataSource.map(i -> i * i).print();
 
-    dataSource.flatMap((Integer number, Collector<String> out) -> {
-      StringBuilder builder = new StringBuilder();
-      for (int i = 0; i < number; i++) {
-        builder.append('a');
-        out.collect(builder.toString());
-      }
-    }).returns(Types.STRING).print();
+    dataSource
+        .flatMap((Integer number, Collector<String> out) -> {
+          StringBuilder builder = new StringBuilder();
+          for (int i = 0; i < number; i++) {
+            builder.append('a');
+            out.collect(builder.toString());
+          }
+        })
+        .returns(Types.STRING).print();
   }
 }
