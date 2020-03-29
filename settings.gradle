@@ -1,2 +1,4 @@
 rootProject.name = 'awesome-flink'
 include 'flink-quickstart'
+include 'dataset-practice'
+include 'dataset-practice:day01'
