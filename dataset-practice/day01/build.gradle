@@ -11,7 +11,7 @@ mainClassName = 'com.arvin.flink.demo.dataset.day01.WordCountExample'
 
 ext {
     javaVersion = '1.8'
-    flinkVersion = '1.9.1'
+    flinkVersion = '1.10.0'
     scalaBinaryVersion = '2.11'
     slf4jVersion = '1.7.7'
     log4jVersion = '1.2.17'
